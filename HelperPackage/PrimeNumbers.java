@@ -1,6 +1,5 @@
-/**HelperPackages is a class that holds classes with methods
- * that will be used multiple times throughout different
- * 'Euler Project' projects. It helps minimizing repetitive code
+/**PrimeNumbers class is a helper class that holds useful
+ * methods to check if a number is prime or not.
  *
  * @author ndriqa
  */
