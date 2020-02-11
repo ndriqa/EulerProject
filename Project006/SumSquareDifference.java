@@ -36,15 +36,19 @@ public class SumSquareDifference {
         squareOfSum = tempSum * tempSum;
 
         difference = Math.abs(sumOfSquares - squareOfSum);
+    }
 
-        System.out.println("Difference between the sum of the squares and square of the \n" +
-                            "sum of the numbers up to N = " + N + " is: " + difference);
+    @Override
+    public String toString(){
+        return "Difference between the sum of the squares and square of the \n" +
+                "sum of the numbers up to N = " + N + " is: " + difference;
     }
 
     public static void main(String[] args) {
         int n = 100;
         SumSquareDifference s = new SumSquareDifference(n);
         s.calculate();
+        System.out.println(s);
     }
 
 }

@@ -30,12 +30,17 @@ public class PrimeNo10001 {
                 thePrime = primeSearch;
             }
         }
-        System.out.println("the " + MAXIMUM + "th prime is: " + thePrime);
+    }
+
+    @Override
+    public String toString(){
+        return "the " + MAXIMUM + "th prime is: " + thePrime;
     }
 
     public static void main(String[] args) {
         int max = 10001;
         PrimeNo10001 prime = new PrimeNo10001(max);
         prime.calculate();
+        System.out.println(prime);
     }
 }

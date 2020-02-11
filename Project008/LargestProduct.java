@@ -31,7 +31,8 @@ public class LargestProduct {
         }
     }
 
-    private String getLargestProduct() {
+    @Override
+    public String toString() {
         return ""+largestProduct;
     }
 
@@ -59,6 +60,6 @@ public class LargestProduct {
 
         LargestProduct product = new LargestProduct(thousand);
         product.calculate();
-        System.out.println(product.getLargestProduct());
+        System.out.println(product);
     }
 }

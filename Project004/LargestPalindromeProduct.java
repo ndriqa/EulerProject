@@ -19,7 +19,7 @@ public class LargestPalindromeProduct {
         largestPalinProd = 1;
     }
 
-    public int getLargestPalindromeProduct(){
+    public void calculate(){
         for (int i = 0; i < maxA; i++) {
             for (int j = 0; j < maxB; j++) {
                 int tempProd = i * j;
@@ -28,7 +28,11 @@ public class LargestPalindromeProduct {
                 }
             }
         }
-        return largestPalinProd;
+    }
+
+    @Override
+    public String toString(){
+        return ("Largest palindrome product is: " + largestPalinProd);
     }
 
     public static void main(String[] args) {
@@ -36,8 +40,7 @@ public class LargestPalindromeProduct {
         int b = a;
 
         LargestPalindromeProduct palindrome = new LargestPalindromeProduct(a, b);
-        int palin = palindrome.getLargestPalindromeProduct();
-        System.out.println("Largest palindrome product of two numbers up to "
-                            + a + " and " + b + " is: " + palin);
+        palindrome.calculate();
+        System.out.println(palindrome);
     }
 }

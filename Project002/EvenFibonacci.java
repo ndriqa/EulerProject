@@ -11,14 +11,15 @@ package Project002;
 public class EvenFibonacci {
     int fibonaci1;
     int fibonaci2;
+    int sum;
 
     public EvenFibonacci(int f1, int f2){
         fibonaci1 = f1;
         fibonaci2 = f2;
+        sum = 0;
     }
 
-    public int calculate(int max){
-        int sum = 0;
+    public void calculate(int max){
         if(fibonaci1%2==0) {
             sum += fibonaci1;
         } else {
@@ -32,13 +33,16 @@ public class EvenFibonacci {
             fibonaci1 = fibonaci2;
             fibonaci2 = currentFib;
         }
-        return sum;
+    }
+    @Override
+    public String toString(){
+        return "the sum is: "+sum;
     }
 
     public static void main(String[] args) {
         int maximum = 4000000;
         EvenFibonacci ef = new EvenFibonacci(1, 2);
-        int sumOfEvenFibbonaci = ef.calculate(maximum);
-        System.out.println(sumOfEvenFibbonaci);
+        ef.calculate(maximum);
+        System.out.println(ef);
     }
 }

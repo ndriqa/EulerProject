@@ -10,35 +10,39 @@ import HelperPackage.PrimeNumbers;
 
 public class LargestPrimeFactor {
     long number;
+    long largest;
 
     public LargestPrimeFactor(long num){
         number = num;
+        largest = 1;
     }
 
-    public long getLargestPrimeFactor(){
-        long primeFact = 1l;
+    public void calculate(){
         long i = 1;
 
         while(i < Math.sqrt(number)){
             if(number%i == 0){
                 if(PrimeNumbers.isPrime(i)){
-                    primeFact = i;
-                    System.out.println(primeFact + " is a prime factor of " + number);
+                    largest = i;
+                    System.out.println(largest + " is a prime factor of " + number);
                 }
             }
 
             i+=2;
         }
-        return primeFact;
+    }
+
+    @Override
+    public String toString(){
+        return "largest one is: "+largest;
     }
 
     public static void main(String[] args) {
         long num = 600851475143l;
 
         LargestPrimeFactor primeFactor = new LargestPrimeFactor(num);
-
-        long largestFactor = primeFactor.getLargestPrimeFactor();
-        System.out.println("the largest one is: " + largestFactor);
+        primeFactor.calculate();
+        System.out.println(primeFactor);
 
     }
 }

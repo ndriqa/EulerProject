@@ -6,6 +6,8 @@ package Project009;
  *
  * There exists exactly one Pythagorean triplet for which a + b + c = 1000.
  * Find the product abc.
+ *
+ * @author ndriqa
  * */
 public class SpecialPythagoreanTriplet {
     int a, b, c;
@@ -35,20 +37,24 @@ public class SpecialPythagoreanTriplet {
                 }
             }
         }
+    }
 
-        System.out.println("The special pythagorean triplet is ("
-                            + a + ", " + b + ", " + c + ") : ");
-        System.out.println("-----------------------------------------------");
-        System.out.println("a + b + c = " + a +" + "+ b +" + "+ c + " = " + (a+b+c));
-        System.out.println("-----------------------------------------------");
-        System.out.println("a^2 + b^2 = " + a*a +" + "+ b*b +" = "+ c*c + " = c^2");
-        System.out.println("-----------------------------------------------");
-        System.out.println("a * b * c = " + a*b*c);
+    @Override
+    public String toString(){
+        return "The special pythagorean triplet is ("
+                + a + ", " + b + ", " + c + ") : \n" +
+                "-----------------------------------------------\n" +
+                "a + b + c = " + a +" + "+ b +" + "+ c + " = " + (a+b+c) + "\n" +
+                "-----------------------------------------------\n" +
+                "a^2 + b^2 = " + a*a +" + "+ b*b +" = "+ c*c + " = c^2\n" +
+                "-----------------------------------------------\n" +
+                "a * b * c = " + a*b*c;
     }
 
     public static void main(String[] args) {
         int sum = 1000;
         SpecialPythagoreanTriplet pyth = new SpecialPythagoreanTriplet(sum);
         pyth.calculate();
+        System.out.println(pyth);
     }
 }

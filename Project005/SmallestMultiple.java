@@ -21,17 +21,18 @@ public class SmallestMultiple {
             multiple = GCD.smallestMultiple(multiple, i);
         }
 
-        System.out.println("Smallest multiple of numbert up to " + N
-                + " that is divisible by every number up to that, is: " + getMultiple());
-
     }
-    public long getMultiple(){
-        return multiple;
+
+    @Override
+    public String toString(){
+        return "Smallest multiple of numbert up to " + N
+                + " that is divisible by every number up to that, is: " + multiple;
     }
 
     public static void main(String[] args) {
         int n = 20;
         SmallestMultiple multi = new SmallestMultiple(n);
         multi.calculate();
+        System.out.println(multi);
     }
 }

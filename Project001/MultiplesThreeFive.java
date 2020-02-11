@@ -22,14 +22,19 @@ public class MultiplesThreeFive {
                 sum += i;
             }
         }
-        System.out.println("The sum of all the multiples of 3 or 5 below 1000 is: "+ sum);
     }
 
     public boolean isMultipleOfDenominator(int numerator, int denominator){
         return ((numerator%denominator)==0);
     }
 
+    @Override
+    public String toString(){
+        return ("The sum of all the multiples of 3 or 5 below 1000 is: "+ sum);
+    }
+
     public static void main(String[] args){
-        new MultiplesThreeFive(1000);
+        MultiplesThreeFive multi = new MultiplesThreeFive(1000);
+        System.out.println(multi);
     }
 }
