@@ -1,0 +1,21 @@
+/**collatz finds number of terms in the sequence formed by n
+ * @param n number going through collatz function*/
+
+public int collatz(int n){
+    if(n == 1){
+        return chainCount;
+    }
+    if(n%2 == 0){
+        chainCount++;
+        return collatz(n/2);
+    } else {
+        chainCount++;
+        return collatz(3*n + 1);
+    }
+}
+
+
+//This method finds number of terms in collatz sequence with a starting number n
+//but the problem is that for large numbers the stack overflows which gives off an
+//error. So it only works for smaller numbers. That's why I've gone with a non
+//recursive method in the code.
