@@ -15,7 +15,7 @@ public int collatz(int n){
 }
 
 
-//This method finds number of terms in collatz sequence with a starting number n
+//This recursive method finds number of terms in collatz sequence with a starting number n
 //but the problem is that for large numbers the stack overflows which gives off an
 //error. So it only works for smaller numbers. That's why I've gone with a non
-//recursive method in the code.
+//recursive method in the actual code.
