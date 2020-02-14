@@ -54,4 +54,59 @@ public class MaximumPathSumI {
             }
         }
     }
+
+    public void calculate(){
+        //we know that border left and border right nodes have only one previous node
+        //which means we calculate their distances first
+        int hierarchyLevels = pyramid.length;
+        //the first node doesn't have a previous node, hence the distance is its value
+        pyramid[0][0].setDistance(pyramid[0][0].getValue());
+
+        for (int i = 1; i < hierarchyLevels; i++) {
+            pyramid[i][0].setDistance(pyramid[i-1][0].getDistance() + pyramid[i][0].getValue());
+            pyramid[i][0].setPrevious(pyramid[i-1][0]);
+
+            pyramid[i][i].setDistance(pyramid[i-1][i-1].getDistance() + pyramid[i][i].getValue());
+            pyramid[i][i].setPrevious(pyramid[i-1][i-1]);
+        }
+
+        for (int i = 2; i < hierarchyLevels; i++) {
+            for (int j = 1; j < pyramid[i].length - 1; j++) {
+                int LEFT = pyramid[i][j].getValue() + pyramid[i-1][j-1].getDistance();
+                int RIGHT = pyramid[i][j].getValue() + pyramid[i-1][j].getDistance();
+
+                if (LEFT > RIGHT){
+                    pyramid[i][j].setDistance(LEFT);
+                    pyramid[i][j].setPrevious(pyramid[i-1][j-1]);
+                } else {
+                    pyramid[i][j].setDistance(RIGHT);
+                    pyramid[i][j].setPrevious(pyramid[i-1][j]);
+                }
+            }
+        }
+
+        for (int i = 0; i < hierarchyLevels; i++) {
+            for (int j = 0; j < pyramid[i].length; j++) {
+                System.out.print("-" + pyramid[i][j].getDistance() + "-");
+            }
+            System.out.println();
+        }
+    }
+
+    @Override
+    public String toString(){
+        int longest = 0;
+        for (int i = 0; i < pyramid[pyramid.length - 1].length - 1; i++) {
+            if (pyramid[pyramid.length-1][i].getDistance() > longest){
+                longest = pyramid[pyramid.length-1][i].getDistance();
+            }
+        }
+        return "Maximum total distance from top to bottom is: " + longest;
+    }
+
+    public static void main(String[] args) {
+        MaximumPathSumI max = new MaximumPathSumI();
+        max.calculate();
+        System.out.println(max);
+    }
 }
