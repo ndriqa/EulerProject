@@ -60,7 +60,6 @@ public class CountingSundays {
         int daysOf1900 = (int)(diff19001901/(1000*60*60*24));
 
         int firstDayOf1901 = daysOf1900 % WEEK;
-        System.out.println(firstDayOf1901);
 
         int day = firstDayOf1901;
         int year = 1901;
@@ -157,7 +156,7 @@ public class CountingSundays {
 
     @Override
     public String toString(){
-        return "there are " + countedSundays + " sundays between ";
+        return "there are " + countedSundays + " sundays as first days of months in 20th century" ;
     }
 
     public static void main(String[] args) {
