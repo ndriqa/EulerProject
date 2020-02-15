@@ -24,5 +24,24 @@ public class FactorialDigitSum {
     }
     public void calculate(){
         factorialValue = Factorial.bigFact(N);
+        String digits = factorialValue.toString();
+
+        for (int i = 0; i < digits.length(); i++) {
+            sumOfDigits += Character.getNumericValue(digits.charAt(i));
+        }
+    }
+
+    @Override
+    public String toString(){
+        return "the sum of the digits of the factorial of the number "+N+" is: " +sumOfDigits;
+    }
+
+    public static void main(String[] args) {
+        int n = 100;
+        FactorialDigitSum fact = new FactorialDigitSum(n);
+        fact.calculate();
+        System.out.println(fact);
+
+        System.out.println("and that's a fact (sorry)");
     }
 }
