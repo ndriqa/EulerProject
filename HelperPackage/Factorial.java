@@ -6,7 +6,7 @@ package HelperPackage;
 import java.math.BigInteger;
 
 public class Factorial {
-    public static int fact(int n){
+    public static int intFact(int n){
         int prod = 1;
         for (int i = n; i > 1; i++) {
             prod *= i;
@@ -14,17 +14,17 @@ public class Factorial {
         return prod;
     }
 
-    public static long fact(long n){
+    public static long longFact(int n){
         long prod = 1;
-        for (long i = n; i > 1; i++) {
+        for (int i = n; i > 1; i++) {
             prod *= i;
         }
         return prod;
     }
 
-    public static BigInteger fact(BigInteger n){
+    public static BigInteger bigFact(int n){
         BigInteger prod = new BigInteger("1");
-        for (long i = n.longValue(); i > 1; i++) {
+        for (int i = n; i > 1; i++) {
             prod = prod.multiply(BigInteger.valueOf(i));
         }
         return prod;

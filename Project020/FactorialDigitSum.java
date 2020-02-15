@@ -1,4 +1,9 @@
 package Project020;
+
+import HelperPackage.Factorial;
+
+import java.math.BigInteger;
+
 /**n! means n × (n − 1) × ... × 3 × 2 × 1
  *
  * For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,
@@ -9,5 +14,15 @@ package Project020;
  * @author ndriqa
  * */
 public class FactorialDigitSum {
+    int N;
+    BigInteger factorialValue;
+    int sumOfDigits;
 
+    public FactorialDigitSum(int n){
+        N = n;
+        sumOfDigits = 0;
+    }
+    public void calculate(){
+        factorialValue = Factorial.bigFact(N);
+    }
 }
