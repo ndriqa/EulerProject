@@ -1,0 +1,11 @@
+I solved this problem using Dijkstra's algorithm, which I modified it a little:
+
+Since the longest path was required, I set all distances to 0, then checked if the distance
+from top right or top left note is greater that one another to set the current node's
+distance.
+
+Another difference with the Dijkstra's algorithms is that the one I used doesn't
+mark visited nodes 'visited'. Why? because euler project 18 and 67 use a tree graph, hence
+it doesn't go up the hierarchy levels, only downwards.
+
+Code on!
