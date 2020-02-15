@@ -33,7 +33,7 @@ public class FactorialDigitSum {
 
     @Override
     public String toString(){
-        return "the sum of the digits of the factorial of the number "+N+" is: " +sumOfDigits;
+        return "the sum of the digits of the factorial of the number "+N+"("+factorialValue.toString()+" is: " +sumOfDigits;
     }
 
     public static void main(String[] args) {
