@@ -6,7 +6,7 @@ states that "Members found to be spoiling problems beyond #100 will have their a
 
 As it stands, I publish the code with explanation of what it does in the comments, so you can understand the 
 logic I have used to solve the prolem. For more clear explanation and step by step guide I will publish 
-them at my personal blog "https://ndriqa.blogspot.com/" so you can grasp the whole picture of what 
+them at my personal blog "https://www.ndriqa.com" so you can grasp the whole picture of what 
 needs to be done to get the solution right!
 
 If you didn't come here after you solved the problem yourself or after getting stuck along the way, 
